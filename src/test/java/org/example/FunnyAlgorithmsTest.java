@@ -21,9 +21,25 @@ public class FunnyAlgorithmsTest {
     }
 
     @Test
-    public void stringToIntConverterTest (){
+    public void stringToIntConverterTestCorrectInput (){
         String numT = "12365";
         int num =  12365;
         assertEquals(num,funnyAlgorithms.stringToIntConverter(numT));
+
     }
+
+    @Test(expected = UnsupportedOperationException.class)
+    public void stringToIntConverterTestWrongNegativeInput (){
+        //input out of range
+        String numT = "-35000";
+        funnyAlgorithms.stringToIntConverter(numT);
+    }
+
+    @Test(expected = UnsupportedOperationException.class)
+    public void stringToIntConverterTestWrongPositiveInput (){
+        //input out of range
+        String numT = "35000";
+        funnyAlgorithms.stringToIntConverter(numT);
+    }
+
 }
