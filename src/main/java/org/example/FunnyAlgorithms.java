@@ -1,5 +1,8 @@
 package org.example;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class FunnyAlgorithms {
 
 	/**
@@ -70,14 +73,19 @@ public class FunnyAlgorithms {
 	 * @throws UnsupportedOperationException
 	 */
 	public int stringToIntConverter(String number) throws UnsupportedOperationException {
-
-		int num = Integer.parseInt(number);
-		if (num>32767 | num<-32768)
-			throw new UnsupportedOperationException("To be implemented");
-		else{
-
+		//"-?\\d+(\\.\\d+)?"
+		Pattern pattern = Pattern.compile("-?\\d+");
+		Matcher matcher = pattern.matcher(number);
+		if (matcher.find()){
+			int num = Integer.parseInt(number);
+			if (num>32767 | num<-32768)
+				throw new UnsupportedOperationException("Numero fuori range");
+			return num;
 		}
-		return num;
+		else{
+			throw new UnsupportedOperationException("Stringa non ben formata");
+		}
+
 	}
 
 }
