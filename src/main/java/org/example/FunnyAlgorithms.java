@@ -79,7 +79,6 @@ public class FunnyAlgorithms {
 			int num = Integer.parseInt(number);
 			if (num>32767 | num<-32768)
 				throw new UnsupportedOperationException("Numero fuori range");
-			System.out.println(num);
 			return num;
 		}
 		else{
