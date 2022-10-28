@@ -73,13 +73,13 @@ public class FunnyAlgorithms {
 	 * @throws UnsupportedOperationException
 	 */
 	public int stringToIntConverter(String number) throws UnsupportedOperationException {
-		//"-?\\d+(\\.\\d+)?"
 		Pattern pattern = Pattern.compile("-?\\d+");
 		Matcher matcher = pattern.matcher(number);
 		if (matcher.find()){
 			int num = Integer.parseInt(number);
 			if (num>32767 | num<-32768)
 				throw new UnsupportedOperationException("Numero fuori range");
+			System.out.println(num);
 			return num;
 		}
 		else{
