@@ -75,7 +75,7 @@ public class FunnyAlgorithms {
 		if (num>32767 | num<-32768)
 			throw new UnsupportedOperationException("To be implemented");
 		else{
-			
+
 		}
 		return num;
 	}
